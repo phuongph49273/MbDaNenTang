@@ -32,7 +32,7 @@ export default function HomeScreen() {
         }
       }
     }
-    console.log("Cầu thủ ghi nhiều bàn thắng nhất:", top?.name, "-", top?.goals, "bàn thắng");
+    console.log("Cầu thủ ghi nhiều bàn thắng nhất", top?.name, "-", top?.goals, "bàn thắng");
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
