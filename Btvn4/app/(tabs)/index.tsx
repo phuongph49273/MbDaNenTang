@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image } from "react-native";
 
 const ViewComponent = () => {
   return (
@@ -19,6 +19,7 @@ const ViewComponent = () => {
 
 export const TextComponent = () => {
   return (
+    <SafeAreaView>
     <ScrollView>
       <View style={styles.container}>
         {/* Line 1 */}
@@ -67,13 +68,15 @@ export const TextComponent = () => {
             <Text style={[styles.boldText, { color: 'black' }]}>
               và con đường đó giờ
             </Text>{' '}
-            <Text style={[styles.boldText, { color: 'white' }]}>
-              vắng anh </Text> 
+<Text style={[styles.boldText, { color: 'white' }]}>
+              vắng anh
+            </Text> 
               {'\n'} {'\n'}
         </Text>
-
+        
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -82,7 +85,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     backgroundColor: 'blue',
-    height: 650,
+    height: 700,
     width: 400,
     alignSelf: 'center',
     marginTop: 10,
@@ -94,6 +97,7 @@ const styles = StyleSheet.create({
   boldText: {
     fontWeight: 'bold',
   },
+  
 });
 
 export default ViewComponent;
