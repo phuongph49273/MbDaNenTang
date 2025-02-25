@@ -1,0 +1,172 @@
+{
+  "product": [
+    {
+      "name": "Cappuccino",
+      "description": "With Steamed Milk",
+      "price": "4.20",
+      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ9NCYJ494YbN2xmfWH8gNmqU7l0E4dS6-0GIIu2_mnPAZBt7ZJ",
+      "id": "1"
+    },
+    {
+      "name": "Cappuccino",
+      "description": "With Foam",
+      "price": "4.20",
+      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ9NCYJ494YbN2xmfWH8gNmqU7l0E4dS6-0GIIu2_mnPAZBt7ZJ",
+      "id": "2"
+    },
+    {
+      "name": "Cappucci",
+      "description": "With Steamed Mi",
+      "price": "4.20",
+      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ9NCYJ494YbN2xmfWH8gNmqU7l0E4dS6-0GIIu2_mnPAZBt7ZJ",
+      "id": "ebcd"
+    },
+    {
+      "id": "d9a0",
+      "name": "Cappuccino ",
+      "description": "Cappuccino ",
+      "price": "5",
+      "image": "https://bizweb.dktcdn.net/100/270/753/files/su-khac-nhau-giua-cafe-espresso-va-capuchino-2.png?v=1728701941913"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "user": "admin",
+      "email": "admin@gmail.com",
+      "pass": "123456"
+    },
+    {
+      "id": "2",
+      "user": "abc",
+      "email": "abc@gmail.com",
+      "pass": "123"
+    },
+    {
+      "id": "c197",
+      "name": "a",
+      "email": "a@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "9da8",
+      "name": "Phuong",
+      "email": "phuong@gmail.com",
+      "password": "123456"
+    }
+  ],
+  "productBeans": [
+    {
+      "name": "Cappuccino",
+      "description": "With Foam",
+      "price": "4.20",
+      "image": "https://vn-test-11.slatic.net/p/02781b2eaf432c50330a30b547ad0ea3.jpg",
+      "id": "2"
+    },
+    {
+      "name": "Cappuccino",
+      "description": "With Foam",
+      "price": "4.20",
+      "image": "https://vn-test-11.slatic.net/p/02781b2eaf432c50330a30b547ad0ea3.jpg",
+      "id": "3"
+    },
+    {
+      "id": "a140",
+      "name": "Hat Coffee",
+      "description": "Hat coffee",
+      "price": "4.5",
+      "image": "https://cdn.tgdd.vn/Files/2018/05/08/1087121/cac-loai-hat-cafe-noi-tieng-1_800x450.jpg"
+    },
+    {
+      "name": "cpcn",
+      "description": "cpcn",
+      "price": "4",
+      "image": "https://bizweb.dktcdn.net/100/270/753/files/su-khac-nhau-giua-cafe-espresso-va-capuchino-2.png?v=1728701941913",
+      "id": "54b4"
+    }
+  ],
+  "cart": [
+    {
+      "id": "d9a0",
+      "name": "Cappuccino ",
+      "image": "https://bizweb.dktcdn.net/100/270/753/files/su-khac-nhau-giua-cafe-espresso-va-capuchino-2.png?v=1728701941913",
+      "price": "5",
+      "size": "M",
+      "quantity": 1
+    },
+    {
+      "id": "54b4",
+      "name": "cpcn",
+      "image": "https://bizweb.dktcdn.net/100/270/753/files/su-khac-nhau-giua-cafe-espresso-va-capuchino-2.png?v=1728701941913",
+      "price": "4",
+      "size": "M",
+      "quantity": 5
+    }
+  ],
+  "order": [
+    {
+      "id": "d49c",
+      "items": [
+        {
+          "id": "1",
+          "name": "Cappuccino",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ9NCYJ494YbN2xmfWH8gNmqU7l0E4dS6-0GIIu2_mnPAZBt7ZJ",
+          "price": "4.20",
+          "size": "M",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Cappuccino",
+          "image": "https://vn-test-11.slatic.net/p/02781b2eaf432c50330a30b547ad0ea3.jpg",
+          "price": "4.20",
+          "size": "M",
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "name": "Cappuccino",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ9NCYJ494YbN2xmfWH8gNmqU7l0E4dS6-0GIIu2_mnPAZBt7ZJ",
+          "price": "4.20",
+          "size": "M",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Cappuccino",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ9NCYJ494YbN2xmfWH8gNmqU7l0E4dS6-0GIIu2_mnPAZBt7ZJ",
+          "price": "4.20",
+          "size": "M",
+          "quantity": 1
+        },
+        {
+          "id": "2bfa",
+          "productId": "1",
+          "name": "Cappuccino",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ9NCYJ494YbN2xmfWH8gNmqU7l0E4dS6-0GIIu2_mnPAZBt7ZJ",
+          "price": "4.20",
+          "size": "S",
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 21,
+      "timestamp": "2025-02-25T03:07:49.499Z"
+    },
+    {
+      "id": "d0fe",
+      "items": [
+        {
+          "id": "2",
+          "name": "Cappuccino",
+          "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ9NCYJ494YbN2xmfWH8gNmqU7l0E4dS6-0GIIu2_mnPAZBt7ZJ",
+          "price": "4.20",
+          "size": "M",
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 4.2,
+      "timestamp": "2025-02-25T03:08:16.339Z"
+    }
+  ],
+  "favorite": []
+}

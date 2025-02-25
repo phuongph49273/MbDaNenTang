@@ -14,6 +14,11 @@ export default function ManDN() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const router = useRouter();
 
+    type User = {
+        email: string;
+        password: string;
+    };
+
     const handleNavigate = () => {
         router.push('/register'); 
     };
@@ -21,60 +26,80 @@ export default function ManDN() {
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
     const handleEmailChange = (text: string) => {
-        setEmail(text);
-        if (text && !emailRegex.test(text)) {
+        const trimmedText = text.trim(); 
+        setEmail(trimmedText);
+    
+        if (!trimmedText) {
+            setEmailError('Vui lòng nhập email.');
             setIsEmailValid(false);
-            setEmailError('Email không hợp lệ. Vui lòng nhập email hợp lệ.');
+        } else if (!emailRegex.test(trimmedText)) {
+            setEmailError('Email không hợp lệ. Vui lòng nhập đúng định dạng.');
+            setIsEmailValid(false);
         } else {
-            setIsEmailValid(true);
             setEmailError('');
+            setIsEmailValid(true);
         }
     };
+    
 
     const handlePasswordChange = (text: string) => {
         setPassword(text);
-        if (text !== '123456') {
-            setPasswordError('');
-        } else {
-            setPasswordError('');
-        }
+    if (text.length < 6) {
+        setPasswordError('Mật khẩu phải có ít nhất 6 ký tự.');
+    } else {
+        setPasswordError('');
+    }
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         setIsSubmitted(true);
         setEmailError('');
         setPasswordError('');
-
+    
         if (!email) {
             setEmailError('Nhập Tài Khoản');
+            return;
         }
-
+    
         if (!password) {
             setPasswordError('Nhập Mật Khẩu');
+            return;
         }
-
-        if (email && password) {
-            if (!isEmailValid) {
-                setEmailError('Email không hợp lệ');
-            } else if (password !== '123456') {
-                setPasswordError('Mật khẩu không hợp lệ');
+    
+        if (!isEmailValid) {
+            setEmailError('Email không hợp lệ');
+            return;
+        }
+    
+        if (email === 'admin@gmail.com' && password === '123456') {
+            Alert.alert('Admin', 'Đăng nhập thành công!', [
+                { text: 'OK', onPress: () => router.push('/admin ' as any) }
+            ]);
+            return;
+        }
+        try {
+            const response = await fetch('http://10.24.50.228:3000/users');
+            const users = await response.json();
+    
+            const user = users.find((u: User) => u.email === email && u.password === password);
+    
+            if (user) {
+                Alert.alert('Thành công', 'Bạn đã đăng nhập thành công!', [
+                    { text: 'OK', onPress: () => router.push('/main') }
+                ]);
             } else {
-                Alert.alert('Thành công', 'Bạn đã đăng nhập thành công!',[
-                    {
-                        text: 'OK',
-                        onPress: () => {
-                            router.push('/main');
-                            
-                        },
-                    },
-                ])
+                setPasswordError('Email hoặc mật khẩu không chính xác');
             }
+        } catch (error) {
+            console.error('Lỗi kết nối API:', error);
+            Alert.alert('Lỗi', 'Không thể kết nối đến server. Vui lòng thử lại.');
         }
     };
+    
 
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/images/logo-coffee.jpg')} style={styles.logo} />
+            <Image source={require('../assets/images/logo-coffee.png')} style={styles.logo} />
 
             {/* Welcome Text */}
             <Text style={styles.welcomeText}>Welcome to Lungo !!</Text>
@@ -112,7 +137,7 @@ export default function ManDN() {
                 />
                 <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.eyeIcon}>
                     <Image
-                        source={showPassword ? require('../assets/images/eye-closed.jpg') : require('../assets/images/eye-open.jpg')}
+                        source={showPassword ? require('../assets/images/eye-closed.png') : require('../assets/images/eye-open.png')}
                         style={styles.eyeImage}
                     />
                 </TouchableOpacity>
@@ -127,7 +152,7 @@ export default function ManDN() {
             {/* Google Sign In Button */}
             <TouchableOpacity style={styles.googleButton}>
                 <View style={styles.googleButtonContent}>
-                    <Image source={require('../assets/images/google.jpg')} style={styles.googleLogo} />
+                    <Image source={require('../assets/images/google.png')} style={styles.googleLogo} />
                     <Text style={styles.googleButtonText}>Sign in with Google</Text>
                 </View>
             </TouchableOpacity>
@@ -260,4 +285,3 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
     },
 });
-

@@ -16,7 +16,7 @@ export default function Welcome() {
       <SafeAreaView >
         <ScrollView style={styles.container}>
           <Image style={styles.img}
-          source={require('@/assets/images/logo-coffee.jpg')}
+          source={require('@/assets/images/logo-coffee.png')}
         />
         </ScrollView>
       </SafeAreaView>
